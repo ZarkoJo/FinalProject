@@ -2,37 +2,46 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21506" started-at="2021-02-23T21:54:37 CET" finished-at="2021-02-23T21:54:59 CET">
+  <suite name="Default suite" duration-ms="12941" started-at="2021-02-23T21:58:48 CET" finished-at="2021-02-23T21:59:01 CET">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21506" started-at="2021-02-23T21:54:37 CET" finished-at="2021-02-23T21:54:59 CET">
+    <test name="Default test" duration-ms="12941" started-at="2021-02-23T21:58:48 CET" finished-at="2021-02-23T21:59:01 CET">
       <class name="tests.ProfileTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.ProfileTest@694e1548]" name="setup" is-config="true" duration-ms="2813" started-at="2021-02-23T21:54:37 CET" finished-at="2021-02-23T21:54:40 CET">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.ProfileTest@694e1548]" name="setup" is-config="true" duration-ms="2839" started-at="2021-02-23T21:58:48 CET" finished-at="2021-02-23T21:58:51 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="editProfile()[pri:10, instance:tests.ProfileTest@694e1548]" name="editProfile" duration-ms="18569" started-at="2021-02-23T21:54:40 CET" finished-at="2021-02-23T21:54:59 CET">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="editProfile()[pri:10, instance:tests.ProfileTest@694e1548]" name="editProfile" duration-ms="10041" started-at="2021-02-23T21:58:51 CET" finished-at="2021-02-23T21:59:01 CET">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Cannot locate an element using xpath=//*[contains(@class, 'alert--success') or contains(@class, 'alert--danger')][contains(@style,'display: block')]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[timeout: Timed out receiving message from renderer: 8.821
+  (Session info: chrome=88.0.4324.182)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-5PQ2I20', ip: '192.168.0.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
-Driver info: driver.version: RemoteWebDriver]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63518}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 444e36f9d8db220adc6af4a9a0fb36f0]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//*[contains(@class, 'alert--success') or contains(@class, 'alert--danger')][contains(@style,'display: block')]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 8.821
+  (Session info: chrome=88.0.4324.182)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-5PQ2I20', ip: '192.168.0.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at pages.NotificationSystemPage.getAlert(NotificationSystemPage.java:17)
-at pages.NotificationSystemPage.returnMessage(NotificationSystemPage.java:22)
-at tests.ProfileTest.editProfile(ProfileTest.java:34)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63518}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 444e36f9d8db220adc6af4a9a0fb36f0
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at tests.ProfileTest.editProfile(ProfileTest.java:16)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -63,11 +72,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editProfile -->
-        <test-method status="FAIL" signature="screenShot(org.testng.ITestResult)[pri:0, instance:tests.ProfileTest@694e1548]" name="screenShot" is-config="true" duration-ms="28" started-at="2021-02-23T21:54:59 CET" finished-at="2021-02-23T21:54:59 CET">
+        <test-method status="FAIL" signature="screenShot(org.testng.ITestResult)[pri:0, instance:tests.ProfileTest@694e1548]" name="screenShot" is-config="true" duration-ms="4" started-at="2021-02-23T21:59:01 CET" finished-at="2021-02-23T21:59:01 CET">
           <params>
             <param index="0">
               <value>
@@ -125,7 +134,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShot -->
-        <test-method status="SKIP" signature="Quit()[pri:0, instance:tests.ProfileTest@694e1548]" name="Quit" is-config="true" duration-ms="-1614113699288" started-at="2021-02-23T21:54:59 CET" finished-at="1970-01-01T01:00:00 CET">
+        <test-method status="SKIP" signature="Quit()[pri:0, instance:tests.ProfileTest@694e1548]" name="Quit" is-config="true" duration-ms="-1614113941692" started-at="2021-02-23T21:59:01 CET" finished-at="1970-01-01T01:00:00 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Quit -->
