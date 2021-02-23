@@ -68,12 +68,12 @@ public class ProfilePage extends BasicPage {
 	public void uploadImage() {
 		js.executeScript("arguments[0].click();", this.getUploadImageBtn());
 		WebElement uploadImage = this.driver.findElement(By.xpath("//input[@name = 'file']"));
-		String imagePath = new File("images/slika.png").getAbsolutePath();
+		String imagePath = new File("images/burgerche.png").getAbsolutePath();
 		uploadImage.sendKeys(imagePath);
 	}
 	
 	public void updateProfile (String firstName, String lastName, String address, String phone, String zipCode,
-			String country, String state, String city) {
+			String country, String state, String city) throws Exception {
 		this.getFirstName().clear();
 		this.getLastName().clear();
 		this.getAddress().clear();
@@ -86,7 +86,9 @@ public class ProfilePage extends BasicPage {
 		this.getPhone().sendKeys(phone);
 		this.getZipCode().sendKeys(zipCode);
 		this.getCountry().selectByVisibleText(country);
+		Thread.sleep(1000);
 		this.getState().selectByVisibleText(state);
+		Thread.sleep(1000);
 		this.getCity().selectByVisibleText(city);
 		this.getSaveBtn().click();
 	}
