@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartSummaryPage extends BasicPage{
 
-	public CartSummaryPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public CartSummaryPage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
-
+	
 	public WebElement getClearAllBtn() {
 		return this.driver.findElement(By.xpath("//*[contains(@class, 'btn--third')]\"));\r\n" + 
 				""));

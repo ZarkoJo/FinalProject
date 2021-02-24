@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotificationSystemPage extends BasicPage {
 
-	public NotificationSystemPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public NotificationSystemPage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
 
 	public WebElement getAlert() {

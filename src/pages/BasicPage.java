@@ -10,12 +10,10 @@ public abstract class BasicPage {
 	protected WebDriverWait waiter;
 	protected JavascriptExecutor js;
 	
-	public BasicPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
+	public BasicPage(WebDriver driver, WebDriverWait waiter) {
 		this.driver = driver;
 		this.waiter = waiter;
-		this.js = js;
+		this.js = (JavascriptExecutor)driver;
 	}
 
-
-	
 }

@@ -6,20 +6,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AuthPage extends BasicPage{
+public class AuthPage extends BasicPage {
 
-	public AuthPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public AuthPage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
 
 	public WebElement getProfileName() {
 		return this.driver.findElement(By.xpath("//*[@id='header']/div[2]/div/div[2]/div[2]/ul/li/a"));
-}
-	
+	}
+
 	public WebElement getLogOutBtn() {
 		return this.driver.findElement(By.xpath("//*[@id='header']/div[2]/div/div[2]/div[2]/ul/li/div/ul/li[2]/a"));
 	}
-	
+
 	public void LogOutAccount() {
 		this.getProfileName().click();
 		this.getLogOutBtn().click();

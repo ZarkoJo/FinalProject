@@ -16,11 +16,11 @@ public class ProfileTest extends BasicTest{
 	@Test(priority = 5)
 	public void editProfile() throws Exception {
 		this.driver.get(baseURL+"/guest-user/login-form");
-		LocationPopupPage lpp = new LocationPopupPage(driver, waiter, js);
-		LoginPage lp = new LoginPage(driver, waiter, js);
-		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter, js);
-		ProfilePage pp = new ProfilePage(driver, waiter, js);
-		AuthPage ap = new AuthPage(driver, waiter, js);
+		LocationPopupPage lpp = new LocationPopupPage(driver, waiter);
+		LoginPage lp = new LoginPage(driver, waiter);
+		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter);
+		ProfilePage pp = new ProfilePage(driver, waiter);
+		AuthPage ap = new AuthPage(driver, waiter);
 		
 		//Close Popup (LocationPopupPage)
 		lpp.closePopup();
@@ -46,11 +46,11 @@ public class ProfileTest extends BasicTest{
 	@Test(priority=10)
 	public void ChangeProfileImage() throws Exception {
 		this.driver.get(baseURL+"/guest-user/login-form");
-		LocationPopupPage lpp = new LocationPopupPage(driver, waiter, js);
-		LoginPage lp = new LoginPage(driver, waiter, js);
-		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter, js);
-		ProfilePage pp = new ProfilePage(driver, waiter, js);
-		AuthPage ap = new AuthPage(driver, waiter, js);
+		LocationPopupPage lpp = new LocationPopupPage(driver, waiter);
+		LoginPage lp = new LoginPage(driver, waiter);
+		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter);
+		ProfilePage pp = new ProfilePage(driver, waiter);
+		AuthPage ap = new AuthPage(driver, waiter);
 		
 		//Close Popup (LocationPopupPage)
 		lpp.closePopup();
@@ -63,7 +63,7 @@ public class ProfileTest extends BasicTest{
 		this.driver.navigate().to(baseURL+"/member/profile");
 		
 		//Upload image
-		pp.uploadImage();
+		pp.uploadImage("img/slika1.png");
 		String succesfullUpload = nsp.returnMessage();
 		Assert.assertEquals(succesfullUpload, "Profile Image Uploaded Successfully", "[ERROR] Profile image didn't upload");
 		nsp.dissapearMessage();
@@ -71,7 +71,7 @@ public class ProfileTest extends BasicTest{
 		//DeleteImage
 		pp.deleteImage();
 		String deleteImage = nsp.returnMessage();
-		Assert.assertEquals(deleteImage, "Profile Image Uploaded Successfully", "[ERROR] Profile image didnt delete.");
+		Assert.assertEquals(deleteImage, "Profile Image Deleted Successfully", "[ERROR] Profile image didnt delete.");
 		nsp.dissapearMessage();
 
 		//Logout 

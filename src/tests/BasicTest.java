@@ -23,7 +23,7 @@ public abstract class BasicTest {
 	protected WebDriver driver;
 	protected WebDriverWait waiter;
 	protected JavascriptExecutor js;
-	protected String baseURL = "http://demo.yo-meals.com/";
+	protected String baseURL = "http://demo.yo-meals.com";
 	protected String demoEmail = "customer@dummyid.com";
 	protected String demoPass = "12345678a";
 
@@ -53,9 +53,9 @@ public abstract class BasicTest {
 		this.driver.navigate().refresh();
 	}
 	
-	@AfterClass 
-	public void Quit() {
-		this.driver.quit();
-	}
-	
+//	@AfterClass 
+//	public void Quit() {
+//		this.driver.quit();
+//	}
+//	
 }

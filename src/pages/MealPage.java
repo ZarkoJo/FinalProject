@@ -9,20 +9,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MealPage extends BasicPage{
 
-	public MealPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public MealPage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
 
 	public WebElement getFavoriteBtn() {
-		return this.driver.findElement(By.xpath("//*[@id='body']/section[1]/div/div/div[2]/div/div[3]/div[1]/ul/li[3]/input"));
-	}
+		return driver.findElement(By.xpath("//*[@class = 'favourite  itemfav link']"));
+		}
 	
 	public WebElement getQuantityInput() {
 		return this.driver.findElement(By.xpath("//*[@id='body']/section[1]/div/div/div[2]/div/div[3]/div[1]/ul/li[3]/input"));
 	}
 
 	public WebElement getAddToCartBtn() {
-		return this.driver.findElement(By.xpath("//*[contains(@class, 'js-proceedtoAddInCart')]"));
+		return driver.findElement(By.xpath("//*[@class = 'btn btn--primary btn--large js-proceedtoAddInCart ']"));
 	}
 
 	public void addMealToCart(int numbersOfQuantity) {

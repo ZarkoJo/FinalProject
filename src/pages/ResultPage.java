@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ResultPage extends BasicPage{
 
-	public ResultPage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public ResultPage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
 
 	public List<WebElement> searchResult() {

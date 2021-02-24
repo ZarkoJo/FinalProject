@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfilePage extends BasicPage {
 
-	public ProfilePage(WebDriver driver, WebDriverWait waiter, JavascriptExecutor js) {
-		super(driver, waiter, js);
+	public ProfilePage(WebDriver driver, WebDriverWait waiter) {
+		super(driver, waiter);
 	}
 
 	public WebElement getFirstName() {
@@ -59,18 +59,18 @@ public class ProfilePage extends BasicPage {
 	}
 
 	public WebElement getUploadImageBtn() {
-		return this.driver.findElement(By.xpath("//*[@id=\"profileInfo\"]/div/div[1]/div/a"));
+		return driver.findElement(By.className("ion-camera"));
 	}
 
 	public WebElement getDeleteImageBtn() {
-		return this.driver.findElement(By.xpath("//*[@id='profileInfo']/div/div[1]/div/a[2]/i"));
+		return this.driver.findElement(By.className("remove"));
 	}
 	
-	public void uploadImage() throws Exception {
+	public void uploadImage(String picture) throws Exception {
 		js.executeScript("arguments[0].click();", this.getUploadImageBtn());
-		WebElement uploadImage = this.driver.findElement(By.xpath("//input[@name = 'file']"));
-		String imagePath = new File("img/burgerche.jpg").getCanonicalPath();
-		uploadImage.sendKeys(imagePath);
+		WebElement uploadImg = this.driver.findElement(By.xpath("//input[@name = 'file']"));
+		String imagePath = new File(picture).getCanonicalPath();
+		uploadImg.sendKeys(imagePath); 
 	}
 	
 	public void deleteImage() {

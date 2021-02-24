@@ -6,7 +6,6 @@
       <class name="tests.ProfileTest">
         <methods>
           <include name="setup"/>
-          <include name="Quit"/>
           <include name="ChangeProfileImage"/>
           <include name="afterTest"/>
         </methods>
