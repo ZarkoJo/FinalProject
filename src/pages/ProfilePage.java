@@ -1,6 +1,7 @@
 package pages;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -65,11 +66,15 @@ public class ProfilePage extends BasicPage {
 		return this.driver.findElement(By.xpath("//*[@id='profileInfo']/div/div[1]/div/a[2]/i"));
 	}
 	
-	public void uploadImage() {
+	public void uploadImage() throws Exception {
 		js.executeScript("arguments[0].click();", this.getUploadImageBtn());
 		WebElement uploadImage = this.driver.findElement(By.xpath("//input[@name = 'file']"));
-		String imagePath = new File("images/burgerche.png").getAbsolutePath();
+		String imagePath = new File("img/burgerche.jpg").getCanonicalPath();
 		uploadImage.sendKeys(imagePath);
+	}
+	
+	public void deleteImage() {
+		js.executeScript("arguments[0].click();", this.getDeleteImageBtn());
 	}
 	
 	public void updateProfile (String firstName, String lastName, String address, String phone, String zipCode,
@@ -90,7 +95,7 @@ public class ProfilePage extends BasicPage {
 		this.getState().selectByVisibleText(state);
 		Thread.sleep(1000);
 		this.getCity().selectByVisibleText(city);
-		this.getSaveBtn().click();
+		this.getSaveBtn().submit();
 	}
 	
 }

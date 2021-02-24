@@ -5,10 +5,10 @@
     <classes>
       <class name="tests.ProfileTest">
         <methods>
-          <include name="editProfile"/>
-          <include name="screenShot"/>
           <include name="setup"/>
           <include name="Quit"/>
+          <include name="ChangeProfileImage"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- tests.ProfileTest -->
     </classes>

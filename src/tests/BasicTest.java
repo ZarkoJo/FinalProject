@@ -40,14 +40,15 @@ public abstract class BasicTest {
 }
 	
 	@AfterMethod
-	public void screenShot(ITestResult response) throws IOException {
-		String shotTime= new SimpleDateFormat("'yyyyMMddHHmmss'.png'").format(new Date());
-		if (ITestResult.FAILURE == response.getStatus()) {
-				TakesScreenshot screenshot = (TakesScreenshot) this.driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src,
-						new File("screenshots/"+ shotTime));
-		}
+
+		public void afterTest(ITestResult result) throws Exception {
+			String testTime = new SimpleDateFormat("yyyyMMddHHmmss'.png'").format(new Date());
+			if (result.getStatus() == ITestResult.FAILURE) {
+				TakesScreenshot ts = (TakesScreenshot) driver;
+				File ss = ts.getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(ss, new File("screenshots/" + testTime));
+			}
+
 		this.driver.manage().deleteAllCookies();
 		this.driver.navigate().refresh();
 	}
