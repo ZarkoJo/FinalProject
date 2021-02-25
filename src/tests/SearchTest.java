@@ -15,12 +15,11 @@ public class SearchTest extends BasicTest {
 	@Test
 	public void searchResultsTest() throws Exception {
 		SoftAssert sa = new SoftAssert();
-		
+
 		// GotoMeals and enter the location
 		this.driver.get(baseURL + "/meals");
 		lpp.closePopup();
 		lpp.setLocationName("City Center - Albany");
-		
 
 		File file = new File("data/Data.xlsx");
 		FileInputStream fis = new FileInputStream(file);
@@ -33,20 +32,19 @@ public class SearchTest extends BasicTest {
 
 			String Location = row.getCell(0).getStringCellValue();
 			String urlFromXslx = row.getCell(1).getStringCellValue();
-			
+
 			int resultCount = (int) row.getCell(2).getNumericCellValue();
-		
-	//		int realCount = rp.numberOfFoundMeals();
-			
-			
-		this.driver.get(urlFromXslx);
-		lpp.getSelectLocation();
-		lpp.setLocationName(Location);
+
+			 int realCount = rp.numberOfFoundMeals();
+
+			this.driver.get(urlFromXslx);
+			lpp.getSelectLocation();
+			lpp.setLocationName(Location);
 
 			Thread.sleep(4000);
-			
-			sa.assertEquals(rp.numberOfFoundMeals(), resultCount, "[ERROR] Number of results is not the same.");
-		
+
+			sa.assertEquals(realCount, resultCount, "[ERROR] Number of results is not the same.");
+
 			Thread.sleep(1000);
 
 			for (int j = 3; j < 3 + row.getCell(2).getNumericCellValue(); j++) {
