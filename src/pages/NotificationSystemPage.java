@@ -24,8 +24,8 @@ public class NotificationSystemPage extends BasicPage {
 	}
 
 	public void dissapearMessage() {
-		waiter.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, "
-				+ "'system_message')][contains(@style, 'display: none;')]")));
+		waiter.until(ExpectedConditions.presenceOfElementLocated(
+				By.xpath("//*[contains(@class, " + "'system_message')][contains(@style, 'display: none;')]")));
 	}
-	
+
 }

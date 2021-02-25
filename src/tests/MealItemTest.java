@@ -11,19 +11,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-
-
 public class MealItemTest extends BasicTest {
 
 	@Test(priority = 5)
 	public void addMealToCart() throws InterruptedException {
 		this.driver.get(baseURL + "/meal/lobster-shrimp-chicken-quesadilla-combo");
-		
+
 		// Close Popup
 		lpp.closePopup();
 
 		// AddToCart
-		mp.addMealToCart(5);
+		mp.addMealToCart("5");
 		String errorMessage = nsp.returnMessage();
 		Assert.assertEquals(errorMessage, "The Following Errors Occurred:" + "\n" + "Please Select Location",
 				"[ERROR] Message doesn't exist.");
@@ -33,7 +31,7 @@ public class MealItemTest extends BasicTest {
 		Thread.sleep(2000);
 		lpp.setLocationName("Burlington - Vermont");
 		Thread.sleep(5000);
-		mp.addMealToCart(5);
+		mp.addMealToCart("5");
 		Thread.sleep(2000);
 
 		String mealAdd = nsp.returnMessage();
@@ -45,7 +43,6 @@ public class MealItemTest extends BasicTest {
 	@Test(priority = 10)
 	public void addMealToFavorite() throws Exception {
 		this.driver.get(baseURL + "/meal/lobster-shrimp-chicken-quesadilla-combo");
-		
 
 		// Close Popup
 		lpp.closePopup();
@@ -74,7 +71,7 @@ public class MealItemTest extends BasicTest {
 		// GotoMeals
 		this.driver.get(baseURL + "/meals");
 
-	
+		lpp.closePopup();
 		// Set Location
 		lpp.setLocationName("City Center - Albany");
 		Thread.sleep(1000);
@@ -88,11 +85,12 @@ public class MealItemTest extends BasicTest {
 			XSSFRow row = sheet.getRow(i);
 			XSSFCell url1 = row.getCell(0);
 			String url = url1.getStringCellValue();
+			String num = row.getCell(1).getRawValue();
 
-			this.driver.get(url);
+			driver.get(url);
 			Thread.sleep(1000);
-			mp.addMealToCart(4);
-			Thread.sleep(1000);
+			mp.addMealToCart(num);
+			Thread.sleep(2000);
 		}
 		sa.assertAll();
 		csp.clearAll();

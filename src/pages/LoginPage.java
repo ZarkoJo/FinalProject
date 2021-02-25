@@ -16,10 +16,11 @@ public class LoginPage extends BasicPage {
 	public WebElement getEmail() {
 		return this.driver.findElement(By.name("username"));
 	}
+
 	public WebElement getPassword() {
 		return this.driver.findElement(By.name("password"));
 	}
-	
+
 	public void loginForm(String email, String password) {
 		this.getEmail().clear();
 		this.getEmail().sendKeys(email);
@@ -27,6 +28,5 @@ public class LoginPage extends BasicPage {
 		this.getPassword().sendKeys(password);
 		this.getPassword().sendKeys(Keys.ENTER);
 	}
-	
-	
+
 }

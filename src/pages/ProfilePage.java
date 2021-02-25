@@ -65,26 +65,26 @@ public class ProfilePage extends BasicPage {
 	public WebElement getDeleteImageBtn() {
 		return this.driver.findElement(By.className("remove"));
 	}
-	
+
 	public void uploadImage(String picture) throws Exception {
 		js.executeScript("arguments[0].click();", this.getUploadImageBtn());
 		WebElement uploadImg = this.driver.findElement(By.xpath("//input[@name = 'file']"));
 		String imagePath = new File(picture).getCanonicalPath();
-		uploadImg.sendKeys(imagePath); 
+		uploadImg.sendKeys(imagePath);
 	}
-	
+
 	public void deleteImage() {
 		js.executeScript("arguments[0].click();", this.getDeleteImageBtn());
 	}
-	
-	public void updateProfile (String firstName, String lastName, String address, String phone, String zipCode,
+
+	public void updateProfile(String firstName, String lastName, String address, String phone, String zipCode,
 			String country, String state, String city) throws Exception {
 		this.getFirstName().clear();
 		this.getLastName().clear();
 		this.getAddress().clear();
 		this.getPhone().clear();
 		this.getZipCode().clear();
-		
+
 		this.getFirstName().sendKeys(firstName);
 		this.getLastName().sendKeys(lastName);
 		this.getAddress().sendKeys(address);
@@ -97,5 +97,5 @@ public class ProfilePage extends BasicPage {
 		this.getCity().selectByVisibleText(city);
 		this.getSaveBtn().submit();
 	}
-	
+
 }

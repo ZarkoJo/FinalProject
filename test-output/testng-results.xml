@@ -1,65 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45810" started-at="2021-02-25T02:17:27 CET" finished-at="2021-02-25T02:18:13 CET">
+  <suite name="Default suite" duration-ms="28434" started-at="2021-02-25T03:35:04 CET" finished-at="2021-02-25T03:35:33 CET">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45810" started-at="2021-02-25T02:17:27 CET" finished-at="2021-02-25T02:18:13 CET">
-      <class name="tests.MealItemTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.MealItemTest@694e1548]" name="setup" is-config="true" duration-ms="3054" started-at="2021-02-25T02:17:27 CET" finished-at="2021-02-25T02:17:30 CET">
+    <test name="Default test" duration-ms="28434" started-at="2021-02-25T03:35:04 CET" finished-at="2021-02-25T03:35:33 CET">
+      <class name="tests.SearchTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.SearchTest@694e1548]" name="setup" is-config="true" duration-ms="3163" started-at="2021-02-25T03:35:04 CET" finished-at="2021-02-25T03:35:08 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addMealToCart()[pri:5, instance:tests.MealItemTest@694e1548]" name="addMealToCart" duration-ms="20040" started-at="2021-02-25T02:17:30 CET" finished-at="2021-02-25T02:17:51 CET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addMealToCart -->
-        <test-method status="PASS" signature="afterTest(org.testng.ITestResult)[pri:0, instance:tests.MealItemTest@694e1548]" name="afterTest" is-config="true" duration-ms="1757" started-at="2021-02-25T02:17:51 CET" finished-at="2021-02-25T02:17:52 CET">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=addMealToCart status=SUCCESS method=MealItemTest.addMealToCart()[pri:5, instance:tests.MealItemTest@694e1548] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="addMealToFavorite()[pri:10, instance:tests.MealItemTest@694e1548]" name="addMealToFavorite" duration-ms="11748" started-at="2021-02-25T02:17:52 CET" finished-at="2021-02-25T02:18:04 CET">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addMealToFavorite -->
-        <test-method status="PASS" signature="afterTest(org.testng.ITestResult)[pri:0, instance:tests.MealItemTest@694e1548]" name="afterTest" is-config="true" duration-ms="1566" started-at="2021-02-25T02:18:04 CET" finished-at="2021-02-25T02:18:06 CET">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=addMealToFavorite status=SUCCESS method=MealItemTest.addMealToFavorite()[pri:10, instance:tests.MealItemTest@694e1548] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="FAIL" signature="clearCart()[pri:15, instance:tests.MealItemTest@694e1548]" name="clearCart" duration-ms="3337" started-at="2021-02-25T02:18:06 CET" finished-at="2021-02-25T02:18:09 CET">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method status="FAIL" signature="searchResultsTest()[pri:0, instance:tests.SearchTest@694e1548]" name="searchResultsTest" duration-ms="21406" started-at="2021-02-25T03:35:08 CET" finished-at="2021-02-25T03:35:29 CET">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element click intercepted: Element <div class="location-selector">...</div> is not clickable at point (195, 19). Other element would receive the click: <span class="pop-model-overlay"></span>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li/a[contains(text(),'Arbor Hill - Albany')]/.."}
   (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-5PQ2I20', ip: '192.168.0.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59771}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9b1e86525bbc8412a9c754ec9c8a88af]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63249}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c9d3dfa6558deb2fa566126de8fb4536
+*** Element info: {Using=xpath, value=//li/a[contains(text(),'Arbor Hill - Albany')]/..}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="location-selector">...</div> is not clickable at point (195, 19). Other element would receive the click: <span class="pop-model-overlay"></span>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li/a[contains(text(),'Arbor Hill - Albany')]/.."}
   (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-5PQ2I20', ip: '192.168.0.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59771}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9b1e86525bbc8412a9c754ec9c8a88af
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Zarko\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63249}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c9d3dfa6558deb2fa566126de8fb4536
+*** Element info: {Using=xpath, value=//li/a[contains(text(),'Arbor Hill - Albany')]/..}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -70,10 +44,13 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at pages.LocationPopupPage.setLocationName(LocationPopupPage.java:42)
-at tests.MealItemTest.clearCart(MealItemTest.java:79)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at pages.LocationPopupPage.getLocationItem(LocationPopupPage.java:28)
+at pages.LocationPopupPage.setLocationName(LocationPopupPage.java:46)
+at tests.SearchTest.searchResultsTest(SearchTest.java:37)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -104,26 +81,26 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clearCart -->
-        <test-method status="PASS" signature="afterTest(org.testng.ITestResult)[pri:0, instance:tests.MealItemTest@694e1548]" name="afterTest" is-config="true" duration-ms="3171" started-at="2021-02-25T02:18:09 CET" finished-at="2021-02-25T02:18:12 CET">
+        </test-method> <!-- searchResultsTest -->
+        <test-method status="PASS" signature="afterTest(org.testng.ITestResult)[pri:0, instance:tests.SearchTest@694e1548]" name="afterTest" is-config="true" duration-ms="2813" started-at="2021-02-25T03:35:29 CET" finished-at="2021-02-25T03:35:32 CET">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=clearCart status=FAILURE method=MealItemTest.clearCart()[pri:15, instance:tests.MealItemTest@694e1548] output={null}]]]>
+                <![CDATA[[TestResult name=searchResultsTest status=FAILURE method=SearchTest.searchResultsTest()[pri:0, instance:tests.SearchTest@694e1548] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="Quit()[pri:0, instance:tests.MealItemTest@694e1548]" name="Quit" is-config="true" duration-ms="1071" started-at="2021-02-25T02:18:12 CET" finished-at="2021-02-25T02:18:13 CET">
+        <test-method status="PASS" signature="Quit()[pri:0, instance:tests.SearchTest@694e1548]" name="Quit" is-config="true" duration-ms="994" started-at="2021-02-25T03:35:32 CET" finished-at="2021-02-25T03:35:33 CET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Quit -->
-      </class> <!-- tests.MealItemTest -->
+      </class> <!-- tests.SearchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
