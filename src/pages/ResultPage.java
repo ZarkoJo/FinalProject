@@ -16,7 +16,9 @@ public class ResultPage extends BasicPage {
 	}
 
 	public List<WebElement> searchResult() {
-		return this.driver.findElements(By.xpath("//*[@class = 'product-name']/a"));
+		
+		return this.driver.findElements(By.xpath("//*[@class='product-name']/a"));
+	
 	}
 
 	public List<String> MealsName() {
