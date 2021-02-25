@@ -18,6 +18,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
+import pages.AuthPage;
+import pages.CartSummaryPage;
+import pages.LocationPopupPage;
+import pages.LoginPage;
+import pages.MealPage;
+import pages.NotificationSystemPage;
+import pages.ProfilePage;
+import pages.ResultPage;
+
 
 public abstract class BasicTest {
 	protected WebDriver driver;
@@ -26,7 +35,14 @@ public abstract class BasicTest {
 	protected String baseURL = "http://demo.yo-meals.com";
 	protected String demoEmail = "customer@dummyid.com";
 	protected String demoPass = "12345678a";
-
+	protected LocationPopupPage lpp;
+	protected CartSummaryPage csp;
+	protected AuthPage ap;
+	protected LoginPage lp;
+	protected MealPage mp;
+	protected NotificationSystemPage nsp;
+	protected ProfilePage pp;
+	protected ResultPage rp;
 	
 	@BeforeClass
 	public void setup() {
@@ -37,6 +53,15 @@ public abstract class BasicTest {
 			this.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 			this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			this.driver.manage().window().maximize();
+			this.ap = new AuthPage(driver, waiter);
+			this.csp = new CartSummaryPage(driver, waiter);
+			this.lpp = new LocationPopupPage(driver, waiter);
+			this.lp = new LoginPage(driver, waiter);
+			this.nsp = new NotificationSystemPage(driver, waiter);
+			this.pp = new ProfilePage(driver, waiter);
+			this.rp = new ResultPage(driver, waiter);
+			this.mp= new MealPage(driver, waiter);
+			
 }
 	
 	@AfterMethod
@@ -53,9 +78,9 @@ public abstract class BasicTest {
 		this.driver.navigate().refresh();
 	}
 	
-//	@AfterClass 
-//	public void Quit() {
-//		this.driver.quit();
-//	}
-//	
+	@AfterClass 
+	public void Quit() {
+		this.driver.quit();
+	}
+	
 }

@@ -16,11 +16,7 @@ public class ProfileTest extends BasicTest{
 	@Test(priority = 5)
 	public void editProfile() throws Exception {
 		this.driver.get(baseURL+"/guest-user/login-form");
-		LocationPopupPage lpp = new LocationPopupPage(driver, waiter);
-		LoginPage lp = new LoginPage(driver, waiter);
-		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter);
-		ProfilePage pp = new ProfilePage(driver, waiter);
-		AuthPage ap = new AuthPage(driver, waiter);
+		
 		
 		//Close Popup (LocationPopupPage)
 		lpp.closePopup();
@@ -46,11 +42,7 @@ public class ProfileTest extends BasicTest{
 	@Test(priority=10)
 	public void ChangeProfileImage() throws Exception {
 		this.driver.get(baseURL+"/guest-user/login-form");
-		LocationPopupPage lpp = new LocationPopupPage(driver, waiter);
-		LoginPage lp = new LoginPage(driver, waiter);
-		NotificationSystemPage nsp = new NotificationSystemPage(driver, waiter);
-		ProfilePage pp = new ProfilePage(driver, waiter);
-		AuthPage ap = new AuthPage(driver, waiter);
+	
 		
 		//Close Popup (LocationPopupPage)
 		lpp.closePopup();
